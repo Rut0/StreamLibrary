@@ -1,0 +1,53 @@
+D:\DragonBox\StreamLibrary\StreamTest\bin\Debug\StreamTest.exe
+D:\DragonBox\StreamLibrary\StreamTest\bin\Debug\StreamTest.pdb
+D:\DragonBox\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.dll
+D:\DragonBox\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.pdb
+D:\DragonBox\StreamLibrary\StreamTest\obj\Debug\StreamTest.csprojResolveAssemblyReference.cache
+D:\DragonBox\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
+D:\DragonBox\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
+D:\DragonBox\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache
+D:\DragonBox\StreamLibrary\StreamTest\obj\Debug\StreamTest.exe
+D:\DragonBox\StreamLibrary\StreamTest\obj\Debug\StreamTest.pdb
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.exe
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.pdb
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.exe
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.pdb
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.dll
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.pdb
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csprojResolveAssemblyReference.cache
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.exe
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.pdb
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.exe
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.pdb
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csprojResolveAssemblyReference.cache
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.CodecUI.resources
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.exe
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.pdb
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csprojResolveAssemblyReference.cache
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.CodecUI.resources
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.exe
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.pdb
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.dll
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.exe
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.pdb
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.exe
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamTest.pdb
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csprojResolveAssemblyReference.cache
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.CodecUI.resources
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache

@@ -1,0 +1,22 @@
+D:\DragonBox\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.dll
+D:\DragonBox\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.pdb
+D:\DragonBox\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.dll
+D:\DragonBox\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.pdb
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.dll
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.pdb
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.csprojResolveAssemblyReference.cache
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.dll
+C:\Users\AnguisCaptor\CloudStation\Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.dll
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.csprojResolveAssemblyReference.cache
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.dll
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.pdb
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.dll
+C:\Users\DragonHunter\Documents\CloudStation\Main Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamLibrary\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.dll
+C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.pdb

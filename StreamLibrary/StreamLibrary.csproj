@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9417F922-6EA9-4811-BB98-8D2A875396C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StreamLibrary</RootNamespace>
+    <AssemblyName>StreamLibrary</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Codecs\DirectDriverCodec.cs" />
+    <Compile Include="Codecs\MJPGCodec.cs" />
+    <Compile Include="Codecs\QuickCachedStreamCodec.cs" />
+    <Compile Include="Codecs\QuickStreamCodec.cs" />
+    <Compile Include="Codecs\SmallCachedStreamCodec.cs" />
+    <Compile Include="Codecs\SmallStreamCodec.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="IUnsafeCodec.cs" />
+    <Compile Include="IVideoCodec.cs" />
+    <Compile Include="src\FastBitmap.cs" />
+    <Compile Include="src\LzwCompression.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\CRC32.cs" />
+    <Compile Include="src\JpgCompression.cs" />
+    <Compile Include="src\MurmurHash2Unsafe.cs" />
+    <Compile Include="src\NativeMethods.cs" />
+    <Compile Include="src\PayloadWriter.cs" />
+    <Compile Include="src\SafeQuickLZ.cs" />
+    <Compile Include="src\SimpleBitmap.cs" />
+    <Compile Include="UnsafeCodecs\UnsafeCacheCodec.cs" />
+    <Compile Include="UnsafeCodecs\UnsafeCachedStreamCodec.cs" />
+    <Compile Include="UnsafeCodecs\UnsafeOptimizedCodec.cs" />
+    <Compile Include="UnsafeCodecs\UnsafeQuickStream.cs" />
+    <Compile Include="UnsafeCodecs\UnsafeStreamCodec.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
