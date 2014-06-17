@@ -136,14 +136,14 @@ namespace StreamTest
                 i++;
             }*/
 
-            /*while (false)
+            while (true)
             {
                 Bitmap bmp = CaptureScreen();
-                Bitmap bmpClone = (Bitmap)bmp.Clone();
                 BitmapData bmpData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
 
                 if (UI.UnsafeCodec != null)
                 {
+                    Bitmap bmpClone = (Bitmap)bmp.Clone();
                     UI.RenderBitmap(bmpData.Scan0, bmpClone, new Rectangle(0, 0, bmp.Width, bmp.Height), new Size(bmp.Width, bmp.Height), bmp.PixelFormat);
                 }
                 else
@@ -151,9 +151,10 @@ namespace StreamTest
                     UI.RenderBitmap(IntPtr.Zero, bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), new Size(bmp.Width, bmp.Height), bmp.PixelFormat);
                 }
                 UpdateCodecList(UI);
-            }*/
+                bmp.Dispose();
+            }
 
-            foreach (string file in Directory.GetFiles(@"C:\images\310.to.Yuma.2007.1080p.BrRip.x264.BOKUTOX (6-4-2014 3-43-10 PM)\", "*.*", SearchOption.TopDirectoryOnly))
+            /*foreach (string file in Directory.GetFiles(@"C:\images\310.to.Yuma.2007.1080p.BrRip.x264.BOKUTOX (6-4-2014 3-43-10 PM)\", "*.*", SearchOption.TopDirectoryOnly))
             {
                 Bitmap bmp = (Bitmap)Bitmap.FromFile(file);
                 //Bitmap bmpClone = (Bitmap)bmp.Clone();
@@ -172,15 +173,17 @@ namespace StreamTest
                     UI.RenderBitmap(IntPtr.Zero, bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), new Size(bmp.Width, bmp.Height), bmp.PixelFormat);
                 }
                 UpdateCodecList(UI);
-            }
+            }*/
             UpdateCodecList(UI, true);
         }
 
         private Bitmap CaptureScreen()
         {
-            Bitmap bmpScreenshot = new Bitmap(1920, 1080, PixelFormat.Format32bppArgb);
+            Rectangle rect = Screen.AllScreens[0].WorkingArea;
+
+            Bitmap bmpScreenshot = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
             Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
-            gfxScreenshot.CopyFromScreen(-1920, 0, 0, 0, new Size(bmpScreenshot.Width, bmpScreenshot.Height), CopyPixelOperation.SourceCopy);
+            gfxScreenshot.CopyFromScreen(0, 0, 0, 0, new Size(bmpScreenshot.Width, bmpScreenshot.Height), CopyPixelOperation.SourceCopy);
             gfxScreenshot.Dispose();
             return bmpScreenshot;
         }
