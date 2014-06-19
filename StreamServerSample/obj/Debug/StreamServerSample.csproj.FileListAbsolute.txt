@@ -1,0 +1,12 @@
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\obj\Debug\StreamServerSample.Form1.resources
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\obj\Debug\StreamServerSample.Properties.Resources.resources
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\obj\Debug\StreamServerSample.csproj.GenerateResource.Cache
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\bin\Debug\StreamServerSample.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\bin\Debug\StreamServerSample.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\obj\Debug\StreamServerSample.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\obj\Debug\StreamServerSample.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamServerSample\obj\Debug\StreamServerSample.csprojResolveAssemblyReference.cache
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamServerSample.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamServerSample.pdb

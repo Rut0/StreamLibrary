@@ -81,11 +81,22 @@ namespace StreamTest
 
         private void CaptureThread(object o)
         {
-            TestCodec(codecUI1);
-            TestCodec(codecUI2);
-            TestCodec(codecUI3);
-            //TestCodec(codecUI4);
-            //TestCodec(codecUI5);
+            while (true)
+            {
+                Bitmap bmp = CaptureScreen();
+                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+                Size size = new System.Drawing.Size(bmp.Width, bmp.Height);
+                BitmapData bmpData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
+
+                TestCodec(codecUI1, bmp, bmpData, rect, size);
+                TestCodec(codecUI2, bmp, bmpData, rect, size);
+                //TestCodec(codecUI3, bmp, bmpData, rect, size);
+                //TestCodec(codecUI4);
+                //TestCodec(codecUI5);
+
+                bmp.UnlockBits(bmpData);
+                bmp.Dispose();
+            }
 
             /*foreach (string file in Directory.GetFiles(@"C:\images\"))
             {
@@ -112,7 +123,7 @@ namespace StreamTest
 
         List<Bitmap> images = new List<Bitmap>();
 
-        private void TestCodec(CodecUI UI)
+        private void TestCodec(CodecUI UI, Bitmap bitmap, BitmapData bmpData, Rectangle scanArea, Size ImgSize)
         {
             int i = 0;
             /*Bitmap bmp = (Bitmap)Bitmap.FromFile(@"D:\DragonBox\wallpapers\Space-HD-Wallpaper_Pack2-12.jpg");
@@ -136,23 +147,16 @@ namespace StreamTest
                 i++;
             }*/
 
-            while (true)
-            {
-                Bitmap bmp = CaptureScreen();
-                BitmapData bmpData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
 
-                if (UI.UnsafeCodec != null)
-                {
-                    Bitmap bmpClone = (Bitmap)bmp.Clone();
-                    UI.RenderBitmap(bmpData.Scan0, bmpClone, new Rectangle(0, 0, bmp.Width, bmp.Height), new Size(bmp.Width, bmp.Height), bmp.PixelFormat);
-                }
-                else
-                {
-                    UI.RenderBitmap(IntPtr.Zero, bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), new Size(bmp.Width, bmp.Height), bmp.PixelFormat);
-                }
-                UpdateCodecList(UI);
-                bmp.Dispose();
+            if (UI.UnsafeCodec != null)
+            {
+                UI.RenderBitmap(bmpData.Scan0, bitmap, scanArea, ImgSize, bitmap.PixelFormat);
             }
+            else
+            {
+                UI.RenderBitmap(IntPtr.Zero, bitmap, scanArea, ImgSize, bitmap.PixelFormat);
+            }
+            UpdateCodecList(UI);
 
             /*foreach (string file in Directory.GetFiles(@"C:\images\310.to.Yuma.2007.1080p.BrRip.x264.BOKUTOX (6-4-2014 3-43-10 PM)\", "*.*", SearchOption.TopDirectoryOnly))
             {
@@ -174,18 +178,21 @@ namespace StreamTest
                 }
                 UpdateCodecList(UI);
             }*/
-            UpdateCodecList(UI, true);
         }
 
         private Bitmap CaptureScreen()
         {
             Rectangle rect = Screen.AllScreens[0].WorkingArea;
 
-            Bitmap bmpScreenshot = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
-            Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
-            gfxScreenshot.CopyFromScreen(0, 0, 0, 0, new Size(bmpScreenshot.Width, bmpScreenshot.Height), CopyPixelOperation.SourceCopy);
-            gfxScreenshot.Dispose();
-            return bmpScreenshot;
+            try
+            {
+                Bitmap bmpScreenshot = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
+                Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+                gfxScreenshot.CopyFromScreen(0, 0, 0, 0, new Size(bmpScreenshot.Width, bmpScreenshot.Height), CopyPixelOperation.SourceCopy);
+                gfxScreenshot.Dispose();
+                return bmpScreenshot;
+            }
+            catch { return new Bitmap(rect.Width, rect.Height); }
         }
     }
 }

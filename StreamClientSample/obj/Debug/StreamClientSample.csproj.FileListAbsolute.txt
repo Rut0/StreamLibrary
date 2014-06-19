@@ -1,0 +1,9 @@
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\bin\Debug\StreamClientSample.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\bin\Debug\StreamClientSample.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\obj\Debug\StreamClientSample.csprojResolveAssemblyReference.cache
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\obj\Debug\StreamClientSample.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamClientSample\obj\Debug\StreamClientSample.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamClientSample.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamClientSample.pdb

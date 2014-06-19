@@ -51,3 +51,16 @@ C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\St
 C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
 C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
 C:\Users\Anguis\CloudStation\Main Projects\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\bin\Debug\StreamTest.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\bin\Debug\StreamTest.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.dll
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\bin\Debug\StreamLibrary.pdb
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.csprojResolveAssemblyReference.cache
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.CodecUI.resources
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.Form1.resources
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.Properties.Resources.resources
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamTest\obj\Debug\StreamTest.csproj.GenerateResource.Cache
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamTest.exe
+C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamTest.pdb
