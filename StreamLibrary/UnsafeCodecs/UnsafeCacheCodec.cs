@@ -137,6 +137,10 @@ namespace StreamLibrary.UnsafeCodecs
                     ScanRect.Y = y;
 
                     int offset = (y * Stride) + (ScanRect.X * PixelSize);
+
+                    if (offset+Stride > Stride * ImageSize.Height)
+                        break;
+
                     uint Hash = hasher.Hash(pScan0 + offset, (int)Stride);
                     uint BlockOffset = Hash % HashBlockCount;
 
@@ -181,7 +185,7 @@ namespace StreamLibrary.UnsafeCodecs
                         Rectangle rect = ImageOffsets[j].Location;
 
                         if (rect.Width != TargetOffset.Width || rect.X != TargetOffset.X)
-                            continue;
+                            continue; //error in 1440p, did not tested futher
 
                         for (int o = 0, offset = 0; o < rect.Height; o++)
                         {
@@ -240,7 +244,7 @@ namespace StreamLibrary.UnsafeCodecs
                 this.decodedBitmap = (Bitmap)Bitmap.FromStream(new MemoryStream(temp));
                 return decodedBitmap;
             }
-            return decodedBitmap;
+            //return decodedBitmap;
 
             List<Rectangle> updates = new List<Rectangle>();
             Rectangle rect;

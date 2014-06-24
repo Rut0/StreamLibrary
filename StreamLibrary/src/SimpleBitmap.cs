@@ -145,11 +145,8 @@ namespace StreamLibrary.src
 
                 Info.Clear();
                 bitMap.UnlockBits(bitmapData);
-
                 bitmapData = null;
-
             }
-
         }
         public unsafe void PlaceBlockAtRectange(byte[] block, Rectangle loc)
         {

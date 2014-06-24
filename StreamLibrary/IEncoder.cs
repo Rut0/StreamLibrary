@@ -8,9 +8,8 @@ using System.Text;
 
 namespace StreamLibrary
 {
-    public abstract class IUnsafeCodec
+    public abstract class IEncoder
     {
-        protected JpgCompression jpgCompression;
         protected LzwCompression lzwCompression;
         public abstract ulong CachedSize { get; internal set; }
         protected object ImageProcessLock { get; private set; }
@@ -22,7 +21,6 @@ namespace StreamLibrary
             set
             {
                 _imageQuality = value;
-                jpgCompression = new JpgCompression(value);
                 lzwCompression = new LzwCompression(value);
             }
         }
@@ -31,7 +29,7 @@ namespace StreamLibrary
         public abstract event IVideoCodec.VideoDebugScanningDelegate onCodeDebugScan;
         public abstract event IVideoCodec.VideoDebugScanningDelegate onDecodeDebugScan;
 
-        public IUnsafeCodec(int ImageQuality = 100)
+        public IEncoder(int ImageQuality = 100)
         {
             this.ImageQuality = ImageQuality;
             this.ImageProcessLock = new object();
@@ -42,5 +40,7 @@ namespace StreamLibrary
         public abstract unsafe void CodeImage(IntPtr Scan0, Rectangle ScanArea, Size ImageSize, PixelFormat Format, Stream outStream);
         public abstract unsafe Bitmap DecodeData(Stream inStream);
         public abstract unsafe Bitmap DecodeData(IntPtr CodecBuffer, uint Length);
+
+
     }
 }

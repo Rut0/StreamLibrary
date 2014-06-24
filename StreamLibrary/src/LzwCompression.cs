@@ -13,13 +13,13 @@ namespace StreamLibrary.src
         private ImageCodecInfo encoderInfo;
         private EncoderParameters encoderParams;
 
-        public LzwCompression()
+        public LzwCompression(int Quality)
         {
-            this.parameter = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (long)80);
+            this.parameter = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (long)Quality);
             this.encoderInfo = GetEncoderInfo("image/jpeg");
             this.encoderParams = new EncoderParameters(2);
             this.encoderParams.Param[0] = parameter;
-            this.encoderParams.Param[1] = new EncoderParameter(System.Drawing.Imaging.Encoder.Compression, (long)2);
+            this.encoderParams.Param[1] = new EncoderParameter(System.Drawing.Imaging.Encoder.Compression, (long)EncoderValue.CompressionLZW);
         }
 
         public byte[] Compress(Bitmap bmp, byte[] AdditionInfo = null)
@@ -31,6 +31,12 @@ namespace StreamLibrary.src
                 bmp.Save(stream, encoderInfo, encoderParams);
                 return stream.ToArray();
             }
+        }
+        public void Compress(Bitmap bmp, Stream stream, byte[] AdditionInfo = null)
+        {
+            if (AdditionInfo != null)
+                stream.Write(AdditionInfo, 0, AdditionInfo.Length);
+            bmp.Save(stream, encoderInfo, encoderParams);
         }
 
         private ImageCodecInfo GetEncoderInfo(string mimeType)

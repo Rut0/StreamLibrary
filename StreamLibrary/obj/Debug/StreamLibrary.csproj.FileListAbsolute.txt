@@ -26,4 +26,3 @@ C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamLibrary\obj\Debug\StreamLib
 C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.pdb
 C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamLibrary.dll
 C:\Users\Anguis\Documents\GitHub\StreamLibrary\bin\StreamLibrary.pdb
-C:\Users\Anguis\Documents\GitHub\StreamLibrary\StreamLibrary\obj\Debug\StreamLibrary.csprojResolveAssemblyReference.cache

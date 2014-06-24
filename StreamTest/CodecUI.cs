@@ -62,14 +62,19 @@ namespace StreamTest
                 Stopwatch DecodecSW = Stopwatch.StartNew();
                 Bitmap DecodedImage = null;
 
-                if (IsUnsafe)
+                while (stream.Length > 0)
                 {
-                    DecodedImage = UnsafeCodec.DecodeData(stream);
+                    stream.Position = 0;
+                    if (IsUnsafe)
+                    {
+                        DecodedImage = UnsafeCodec.DecodeData(stream);
+                    }
+                    else
+                    {
+                        DecodedImage = VideoCodec.DecodeData(stream);
+                    }
                 }
-                else
-                {
-                    DecodedImage = VideoCodec.DecodeData(stream);
-                }
+
                 //DecodedImage = videoCodec.DecodeData(new IntPtr(temp), (uint)stream.Length);
                 DecodecSW.Stop();
 
@@ -141,6 +146,9 @@ namespace StreamTest
                         _speedPerSec = 0;
                     }
                 }));
+
+                stream.Close();
+                stream.Dispose();
             }
         }
 
@@ -151,7 +159,7 @@ namespace StreamTest
             using (Graphics targetG = this.pictureBox1.CreateGraphics())
             {
                 g.Clear(Color.Black);
-                g.DrawRectangle(new Pen(Color.Red), ScanArea);
+                g.DrawRectangle(new Pen(Color.Red, 3), ScanArea);
                 Bitmap tempBmpThumb = (Bitmap)tempBmp.GetThumbnailImage(this.pictureBox1.Width, this.pictureBox1.Height, null, IntPtr.Zero);
                 targetG.Clear(Color.Black);
                 targetG.DrawImage(tempBmpThumb, 0, 0);

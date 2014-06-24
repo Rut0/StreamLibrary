@@ -25,15 +25,19 @@ namespace StreamTest
         public Form1()
         {
             InitializeComponent();
-            codecUI1.UnsafeCodec = new UnsafeStreamCodec(80);
-            codecUI2.UnsafeCodec = new UnsafeOptimizedCodec(80);
+            codecUI1.UnsafeCodec = new UnsafeStreamCodec(80, true);
+            codecUI2.UnsafeCodec = new UnsafeStreamCodec(80, false);
             codecUI3.UnsafeCodec = new UnsafeCachedStreamCodec(80);
-            //codecUI4.UnsafeCodec = new UnsafeCacheCodec(80);
+            codecUI4.UnsafeCodec = new UnsafeMiniCodec(80);
+            codecUI5.UnsafeCodec = new UnsafeOptimizedCodec(80);
+            codecUI6.UnsafeCodec = new UnsafeQuickStream(80);
 
             AddCodecList(codecUI1);
             AddCodecList(codecUI2);
             AddCodecList(codecUI3);
-            //AddCodecList(codecUI4);
+            AddCodecList(codecUI4);
+            AddCodecList(codecUI5);
+            AddCodecList(codecUI6);
         }
 
         public void AddCodecList(CodecUI UI)
@@ -83,16 +87,17 @@ namespace StreamTest
         {
             while (true)
             {
-                Bitmap bmp = CaptureScreen();
+                Bitmap bmp = (Bitmap)CaptureScreen();
                 Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
                 Size size = new System.Drawing.Size(bmp.Width, bmp.Height);
                 BitmapData bmpData = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
 
                 TestCodec(codecUI1, bmp, bmpData, rect, size);
-                TestCodec(codecUI2, bmp, bmpData, rect, size);
-                //TestCodec(codecUI3, bmp, bmpData, rect, size);
-                //TestCodec(codecUI4);
-                //TestCodec(codecUI5);
+                /*TestCodec(codecUI2, bmp, bmpData, rect, size);
+                TestCodec(codecUI3, bmp, bmpData, rect, size);
+                TestCodec(codecUI4, bmp, bmpData, rect, size);
+                TestCodec(codecUI5, bmp, bmpData, rect, size);
+                TestCodec(codecUI6, bmp, bmpData, rect, size);*/
 
                 bmp.UnlockBits(bmpData);
                 bmp.Dispose();

@@ -27,7 +27,6 @@ namespace StreamLibrary.UnsafeCodecs
         }
 
         public Size CheckBlock { get; private set; }
-        private object ImageProcessLock = new object();
         private byte[] EncodeBuffer;
         private Bitmap decodedBitmap;
         private PixelFormat EncodedFormat;
@@ -36,14 +35,17 @@ namespace StreamLibrary.UnsafeCodecs
         public override event IVideoCodec.VideoDebugScanningDelegate onCodeDebugScan;
         public override event IVideoCodec.VideoDebugScanningDelegate onDecodeDebugScan;
 
+        bool UseJPEG;
+
         /// <summary>
         /// Initialize a new object of UnsafeStreamCodec
         /// </summary>
         /// <param name="ImageQuality">The quality to use between 0-100</param>
-        public UnsafeStreamCodec(int ImageQuality = 100)
+        public UnsafeStreamCodec(int ImageQuality = 100, bool UseJPEG = true)
             : base(ImageQuality)
         {
             this.CheckBlock = new Size(50, 1);
+            this.UseJPEG = UseJPEG;
         }
 
         public override unsafe void CodeImage(IntPtr Scan0, Rectangle ScanArea, Size ImageSize, PixelFormat Format, Stream outStream)
@@ -99,10 +101,6 @@ namespace StreamLibrary.UnsafeCodecs
                 long oldPos = outStream.Position;
                 outStream.Write(new byte[4], 0, 4);
                 int TotalDataLength = 0;
-
-                List<byte[]> updates = new List<byte[]>();
-                MemoryStream ms = new MemoryStream();
-                byte[] buffer = null;
 
                 if (this.EncodedFormat != Format)
                     throw new Exception("PixelFormat is not equal to previous Bitmap");
@@ -235,9 +233,18 @@ namespace StreamLibrary.UnsafeCodecs
                     outStream.Write(BitConverter.GetBytes(rect.Height), 0, 4);
                     outStream.Write(new byte[4], 0, 4);
 
-                    long length = outStream.Position;
+                    long length = outStream.Length;
                     long OldPos = outStream.Position;
-                    base.jpgCompression.Compress(TmpBmp, ref outStream);
+
+                    if (UseJPEG)
+                    {
+                        base.jpgCompression.Compress(TmpBmp, ref outStream);
+                    }
+                    else
+                    {
+                        base.lzwCompression.Compress(TmpBmp, outStream);
+                    }
+
                     length = outStream.Position - length;
 
                     outStream.Position = OldPos - 4;
@@ -260,8 +267,7 @@ namespace StreamLibrary.UnsafeCodecs
                 outStream.Position = oldPos;
                 outStream.Write(BitConverter.GetBytes(TotalDataLength), 0, 4);
                 Blocks.Clear();
-                ms.Close();
-                ms.Dispose();
+                finalUpdates.Clear();
             }
         }
 
@@ -282,7 +288,7 @@ namespace StreamLibrary.UnsafeCodecs
                 this.decodedBitmap = (Bitmap)Bitmap.FromStream(new MemoryStream(temp));
                 return decodedBitmap;
             }
-
+            return decodedBitmap;
             byte* bufferPtr = (byte*)CodecBuffer.ToInt32();
             if (DataSize > 0)
             {
@@ -323,38 +329,34 @@ namespace StreamLibrary.UnsafeCodecs
                 this.decodedBitmap = (Bitmap)Bitmap.FromStream(new MemoryStream(temp));
                 return decodedBitmap;
             }
-
-            List<Rectangle> updates = new List<Rectangle>();
-            Rectangle rect;
-            Graphics g = Graphics.FromImage(decodedBitmap);
-            Bitmap tmp;
-            byte[] buffer = null;
-            MemoryStream m;
-
-            while (DataSize > 0)
+            
+            using (Graphics g = Graphics.FromImage(decodedBitmap))
             {
-                byte[] tempData = new byte[4 * 5];
-                inStream.Read(tempData, 0, tempData.Length);
+                while (DataSize > 0)
+                {
+                    byte[] tempData = new byte[4 * 5];
+                    inStream.Read(tempData, 0, tempData.Length);
 
-                rect = new Rectangle(BitConverter.ToInt32(tempData, 0), BitConverter.ToInt32(tempData, 4),
-                                     BitConverter.ToInt32(tempData, 8), BitConverter.ToInt32(tempData, 12));
-                int UpdateLen = BitConverter.ToInt32(tempData, 16);
-                buffer = new byte[UpdateLen];
-                inStream.Read(buffer, 0, buffer.Length);
+                    Rectangle rect = new Rectangle(BitConverter.ToInt32(tempData, 0), BitConverter.ToInt32(tempData, 4),
+                                         BitConverter.ToInt32(tempData, 8), BitConverter.ToInt32(tempData, 12));
+                    int UpdateLen = BitConverter.ToInt32(tempData, 16);
+                    tempData = null;
 
-                if (onDecodeDebugScan != null)
-                    onDecodeDebugScan(rect);
+                    byte[] buffer = new byte[UpdateLen];
+                    inStream.Read(buffer, 0, buffer.Length);
 
-                m = new MemoryStream(buffer);
-                tmp = (Bitmap)Image.FromStream(m);
-                g.DrawImage(tmp, rect.Location);
-                tmp.Dispose();
+                    if (onDecodeDebugScan != null)
+                        onDecodeDebugScan(rect);
 
-                m.Close();
-                m.Dispose();
-                DataSize -= UpdateLen + (4 * 5);
+                    using (MemoryStream m = new MemoryStream(buffer))
+                    using (Bitmap tmp = (Bitmap)Image.FromStream(m))
+                    {
+                        g.DrawImage(tmp, rect.Location);
+                    }
+                    buffer = null;
+                    DataSize -= UpdateLen + (4 * 5);
+                }
             }
-            g.Dispose();
             return decodedBitmap;
         }
     }

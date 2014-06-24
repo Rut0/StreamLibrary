@@ -45,9 +45,14 @@
     <Compile Include="Codecs\QuickStreamCodec.cs" />
     <Compile Include="Codecs\SmallCachedStreamCodec.cs" />
     <Compile Include="Codecs\SmallStreamCodec.cs" />
+    <Compile Include="Encoders\GridCoder\GridBlock.cs" />
+    <Compile Include="Encoders\GridCoder\GridEncoder.cs" />
+    <Compile Include="IEncoder.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IUnsafeCodec.cs" />
     <Compile Include="IVideoCodec.cs" />
+    <Compile Include="src\ExtensionAttribute.cs" />
+    <Compile Include="src\Extentions.cs" />
     <Compile Include="src\FastBitmap.cs" />
     <Compile Include="src\LzwCompression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,15 +61,19 @@
     <Compile Include="src\MurmurHash2Unsafe.cs" />
     <Compile Include="src\NativeMethods.cs" />
     <Compile Include="src\PayloadWriter.cs" />
+    <Compile Include="src\PointerHelper.cs" />
     <Compile Include="src\SafeQuickLZ.cs" />
     <Compile Include="src\SimpleBitmap.cs" />
     <Compile Include="UnsafeCodecs\UnsafeCacheCodec.cs" />
     <Compile Include="UnsafeCodecs\UnsafeCachedStreamCodec.cs" />
+    <Compile Include="UnsafeCodecs\UnsafeMiniCodec.cs" />
     <Compile Include="UnsafeCodecs\UnsafeOptimizedCodec.cs" />
     <Compile Include="UnsafeCodecs\UnsafeQuickStream.cs" />
     <Compile Include="UnsafeCodecs\UnsafeStreamCodec.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Decoders\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
